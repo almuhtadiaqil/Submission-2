@@ -1,0 +1,22 @@
+{
+  "name": "gilabola",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <a href=\"http://materializecss.com/\">     <img src=\"http://materializecss.com/res/materialize.svg\" width=\"150\">   </a> </p>",
+  "main": "service-worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almuhtadiaqil/ligaCempion.git"
+  },
+  "author": "almuhtadiaqil13@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almuhtadiaqil/ligaCempion/issues"
+  },
+  "homepage": "https://github.com/almuhtadiaqil/ligaCempion#readme",
+  "dependencies": {
+    "web-push": "^3.4.4"
+  }
+}

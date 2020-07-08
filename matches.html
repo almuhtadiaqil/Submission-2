@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Liga Cempion</title>
+    <meta name="description" content="My first PWA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#00897B" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+       <!-- Navigasi -->
+    <nav class="teal lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="./index.html" class="brand-logo" id="logo-container">Liga Cempion</a>
+        <a href="./index.html" class="sidenav-trigger" data-target="nav-mobile">
+          <i class="material-icons">arrow_back</i>
+        </a>
+        <ul class="topnav right hide-on-med-and-down"></ul>
+        <ul class="sidenav" id="nav-mobile"></ul>
+      </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+    <div class="container" id="body-content">
+      <div class="row">
+        <div class="valign-wrapper" id="logo-tim">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s4"><a href="#overview" class="active">OVERVIEW</a></li>
+            <li class="tab col s4"><a href="#matches">MATCHES</a></li>
+            <li class="tab col s4"><a href="#players">PLAYERS</a></li>
+          </ul>
+          <div class="col s12 tabs-desc" id="overview"></div>
+          <div class="col s12" id="matches"></div>
+          <div class="col s12" id="players">
+            <table class="kartu-pemain" id="card-player"></table>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red" id="save">
+          <i class="large material-icons">save</i>
+        </a>
+        </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"
+    ></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/idb.js"></script>
+    <script src="js/db.js"></script>
+    <script src="/regis-sw.js"></script>
+    <script>      
+      document.addEventListener("DOMContentLoaded", () => {
+        var elems = document.querySelectorAll(".tabs");
+        M.Tabs.init(elems);
+        var item =  getTim();
+        getMatch();
+
+        var save = document.getElementById("save");
+        save.onclick = () => {
+          console.log("Tombol FAB di klik.");
+          item.then(team => {
+            saveTeams(team);
+          })
+        }
+    });
+    </script>
+  </body>
+</html>
