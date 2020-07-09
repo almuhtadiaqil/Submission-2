@@ -66,8 +66,7 @@ function showStandings(data) {
     const tbody_close = `</tbody>`;
     const table_close = `</table>`;
 
-    stages.table.forEach((standing) => {
-      
+    stages.table.forEach(standing => {  
       const tr_open = `<tr>`;
 
       //kolom tbody
@@ -93,10 +92,11 @@ function showStandings(data) {
       klasemenHTML += tr_open + td + tr_close;
     });
     klasemenHTML+= tbody_close + table_close;
-  })
+  });
     // sisipkan komponen ke dalam elemen table dengan id#champion
-    document.getElementById("champion").innerHTML = klasemenHTML;
-
+    if (document.getElementById("champion")) {
+      document.getElementById("champion").innerHTML = klasemenHTML;
+    }
 }
 function getStandings(){
   if("caches" in window) {
@@ -114,7 +114,7 @@ function getStandings(){
   .then(json)
   .then(data => {
     console.log(data);
-    //showStandings(data);
+    showStandings(data);
   })
   .catch(error);
 }
@@ -188,7 +188,7 @@ function getTim(){
 }
 
 function showMatch(data) {
-  var matchHTML = `<p>Upcoming Match</p>`;
+  var matchHTML = `<p class="center-align"><b>Upcoming Match</b></p>`;
   data.matches.forEach(match => {
     matchHTML += `
       <div class="card-panel valign-wrapper">

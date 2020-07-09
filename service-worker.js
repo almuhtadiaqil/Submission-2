@@ -1,4 +1,4 @@
-var CACHE_NAME = "gilaBola-v88";
+var CACHE_NAME = "gilaBola-v95";
 var urlsToCache = [
   "/",
   "/manifest.json",

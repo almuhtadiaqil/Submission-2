@@ -1,7 +1,7 @@
 var dbPromised = idb.open("gilaBola", 1, function(upgradeDb) {
     if(!upgradeDb.objectStoreNames.contains("teams")){
-        upgradeDb.objectStore("teams", {
-            keypath:"id"
+        upgradeDb.createObjectStore("teams", {
+            keyPath:"id"
         });
     }
 });
