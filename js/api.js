@@ -192,9 +192,17 @@ function showMatch(data) {
   data.matches.forEach(match => {
     matchHTML += `
       <div class="card-panel valign-wrapper">
+        <div>
+          <h5>${match.competition.name}</h5>
+          <h6><b>Matchday ${match.matchday}</b></h6>
+        </div>
         <div class = "col s7">
           <p>${match.homeTeam.name}</p>
           <p>${match.awayTeam.name}</p>
+        </div>
+        <div>
+          <p>${match.score.fullTime.homeTeam}</p>
+          <p>${match.score.fullTime.awayTeam}</p>
         </div>
         <div class = "col s4 offset-s4">
           <p>${convertDate(new Date(match.utcDate))}</p>
